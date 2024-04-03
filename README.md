@@ -1,5 +1,16 @@
 # Clash of Clans Documentation 🛡️⚔️🤖🎮
 
+## Discord Screenshot
+![discord screenshot](/example_screenshots/Discord_QzIRlL3heM.png)
+## Python Script Screenshot
+![python script](/example_screenshots/Code_NQvyIqdSCJ.png)
+## Matplotlib Graph
+![matplotlib graph](/clan_graphs/COYG.png)
+
+
+
+
+
 ## Python Script Documentation
 
 ### Introduction
