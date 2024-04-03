@@ -1,15 +1,17 @@
 import requests
+from dotenv import load_dotenv
 from urllib.parse import quote
 from collections import defaultdict
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+from typing import Final
 
-with open('C:\\Users\\Todd\\Desktop\\API\\clash_api.txt', 'r') as file:
-    token = file.read().strip()
+load_dotenv()
+CLASH_TOKEN: Final[str] = os.getenv('CLASH_TOKEN')
 
 headers = {
-    'authorization': 'Bearer ' + token,
+    'authorization': 'Bearer ' + CLASH_TOKEN,
     'Accept': 'application/json'
 }
 
@@ -26,6 +28,7 @@ def get_user(player_tag):
         print('Player trophies: ' + str(user_json['trophies']))
         print('Player level: ' + str(user_json['expLevel']))
         print('Best trophies: ' + str(user_json['bestTrophies']))
+        print('')
         
         if 'clan' in user_json:
             clan_info = user_json['clan']
@@ -91,6 +94,7 @@ def get_clan_war_league(clan_tag):
 
 def main():
     while True:
+        print('')
         print("1. Get user information")
         print("2. Get clan's information")
         print("3. Get clan war league information")
