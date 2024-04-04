@@ -1,4 +1,4 @@
-# Clash of Clans Documentation 🛡️⚔️🤖🎮
+# Clash of Clans Documentation 🛡️⚔️🤖🎮 
 
 ## Discord Screenshot
 ![discord screenshot](/example_screenshots/Discord_QzIRlL3heM.png)
