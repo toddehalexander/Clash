@@ -54,6 +54,8 @@ def get_clan_members(clan_tag):
     else:
         print('Clan not found.')
 
+import matplotlib.ticker as ticker
+
 def get_clan_war_league(clan_tag):
     clan_tag_encoded = quote(clan_tag)
     response = requests.get(
@@ -83,6 +85,14 @@ def get_clan_war_league(clan_tag):
             plt.title(f"Townhall Levels in {member['name']}")
             plt.xlabel('Townhall Level')
             plt.ylabel('Count')
+
+            # Add the numeric values on top of the bars
+            for i in range(len(values)):
+                plt.text(x=indexes[i], y=values[i], s=values[i], ha='center')
+
+            # Make x-axis display only whole numbers
+            plt.gca().xaxis.set_major_locator(ticker.MaxNLocator(integer=True))
+            plt.gca().yaxis.set_major_locator(ticker.MaxNLocator(integer=True))
 
             # Save the plot as an image in a folder
             if not os.path.exists('clan_graphs'):
