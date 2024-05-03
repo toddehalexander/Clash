@@ -80,19 +80,26 @@ def get_clan_war_league(clan_tag):
             labels = list(townhall_levels.keys())
             values = list(townhall_levels.values())
             indexes = np.arange(len(labels))
+            plt.figure(figsize=(10, 6))  # Adjust the figure size as needed
             plt.bar(indexes, values)
             plt.xticks(indexes, labels)
             plt.title(f"Townhall Levels in {member['name']}")
             plt.xlabel('Townhall Level')
             plt.ylabel('Count')
 
+            # Make x-axis and y-axis display only whole numbers
+            plt.gca().xaxis.set_major_locator(ticker.MaxNLocator(integer=True))
+            plt.gca().yaxis.set_major_locator(ticker.MaxNLocator(integer=True))
+
             # Add the numeric values on top of the bars
             for i in range(len(values)):
                 plt.text(x=indexes[i], y=values[i], s=values[i], ha='center')
 
-            # Make x-axis display only whole numbers
-            plt.gca().xaxis.set_major_locator(ticker.MaxNLocator(integer=True))
-            plt.gca().yaxis.set_major_locator(ticker.MaxNLocator(integer=True))
+            # Set the x-axis ticks to display all labels
+            plt.xticks(indexes, labels, rotation=45, ha='right')
+
+            # Adjust the spacing between subplots
+            plt.subplots_adjust(bottom=0.2)
 
             # Save the plot as an image in a folder
             if not os.path.exists('clan_graphs'):
