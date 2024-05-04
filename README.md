@@ -1,5 +1,5 @@
 # Clash of Bots Documentation 🛡️⚔️🤖🎮  
-
+ 
 ### Introduction
 This Python script provides functionalities to interact with the Clash of Clans API. It allows users to retrieve information about players, clans, and clan war leagues.
 
