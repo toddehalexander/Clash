@@ -3,7 +3,7 @@
 ### Introduction
 This Python script provides functionalities to interact with the Clash of Clans API. It allows users to retrieve information about players, clans, and clan war leagues.
 
-### Features
+### Features 
 - Retrieve player information including name, tag, trophies, level, best trophies, clan name, clan tag, and clan level.
 - Get information about clan members including their name, rank, town hall level, and role.
 - Access clan war league information including town hall levels distribution within the clan.
